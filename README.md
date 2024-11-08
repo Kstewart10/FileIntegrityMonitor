@@ -1,4 +1,4 @@
-<h1>Creating a File Integrity Monitor</h1>
+<h1>File Integrity Monitor</h1>
 
 <h2>Description</h2>
 In this lab I have created a barebones File Integrity monitor using Powershell. The powershell script creates a baseline of files to be checked and alerts the user of changes made to said files. The purpose of this lab is to get some hands on practice with a file integrity monitor and further understand the concept of Integrity within the security and technology workspace. 
@@ -12,40 +12,48 @@ In this lab I have created a barebones File Integrity monitor using Powershell. 
 <h2>Lab walk-through:</h2>
 
 <p align="center">
-Creating Network Security Group for Honeypot Virtual Machine: <br/>
-<img src="https://i.imgur.com/El0I2O1.png" height="80%" width="80%" alt="NSG Creation"/>
+Start of program: <br/>
+<img src="https://i.imgur.com/zbPCCpd.png" height="80%" width="80%" alt="File Integrity Monitor"/>
 <br />
 <br />
-Creating Custom Log using Log Analytics Workspace to pull "Failed RDP" requests from VM:  <br/>
-<img src="https://i.imgur.com/b9L1YzR.png" height="80%" width="80%" alt="Log Creation"/>
+Baseline Has Been Created:  <br/>
+<img src="https://i.imgur.com/Sr8ss2L.png" height="80%" width="80%" alt="File Integrity Monitor"/>
 <br />
 <br />
-Configuring Network Security Group to Allow any and all traffic: <br/>
-<img src="https://i.imgur.com/7H6lZ1s.png" height="80%" width="80%" alt="Allow All"/>
+Created Baseline File: <br/>
+<img src="https://i.imgur.com/tCumd5m.png" height="80%" width="80%" alt="File Integrity Monitor"/>
 <br />
 <br />
-Removing Firewall from Virtual Machine:  <br/>
-<img src="https://i.imgur.com/kX39Ct8.png" height="80%" width="80%" alt="Remove Firewall"/>
+Files to be Checked:  <br/>
+<img src="https://i.imgur.com/JGGEpm3.png" height="80%" width="80%" alt="File Integrity Monitor"/>
 <br />
 <br />
-Powershell Script to export logs from the Virtual Machine:  <br/>
-<img src="https://i.imgur.com/qPqhBj8.png" height="80%" width="80%" alt="Powershell script"/>
+Infinite Loop Begins to check for any changes to the selected folder:  <br/>
+<img src="https://i.imgur.com/mDN7D9l.png" height="80%" width="80%" alt="File Integrity Monitor"/>
 <br />
 <br />
-Virtual Machnine Logs being pulled using Azure Logs:  <br/>
-<img src="https://i.imgur.com/ryX5j8Q.png" height="80%" width="80%" alt="Log Pulls"/>
+Removing File 'e' from the folder:  <br/>
+<img src="https://i.imgur.com/YYfwDiT.png" height="80%" width="80%" alt="FIM"/>
 <br />
 <br />
-Using a script to extract the raw data from the logs:  <br/>
-<img src="https://i.imgur.com/kqqLZLY.png" height="80%" width="80%" alt="Raw Data"/>
+Monitor reports that file 'e' has been deleted:  <br/>
+<img src="https://i.imgur.com/vGPMaBd.png" height="80%" width="80%" alt="FIM"/>
  <br />
  <br />
-Creating workbook in Azure Sentinel to create a world map:  <br/>
-<img src="https://i.imgur.com/mJ1M6Au.png" height="80%" width="80%" alt="Workbook"/>
+Adding an 'e - copy' File to the Folder:  <br/>
+<img src="https://i.imgur.com/axzj3Tx.png" height="80%" width="80%" alt="FIM"/>
 <br />
 <br />
-World Map Showing All Failed Login Attempts From Around the World Using IP Geolocator:  <br/>
-<img src="https://i.imgur.com/wLy7dIj.png" height="80%" width="80%" alt="Failed Login Map"/>
+Monitor Notifies a New File Being Created:  <br/>
+<img src="https://i.imgur.com/yXLzBSX.png" height="80%" width="80%" alt="FIM"/>
+ <br />
+<br />
+Making Changes to the 'b' File:  <br/>
+<img src="https://i.imgur.com/Dw4Iyuq.png" height="80%" width="80%" alt="FIM"/>
+ <br />
+ <br />
+Monitor Notifies that 'b' Has Been Changed:  <br/>
+<img src="https://i.imgur.com/ACm7t3d.png" height="80%" width="80%" alt="FIM"/>
 </p>
 
 <!--
